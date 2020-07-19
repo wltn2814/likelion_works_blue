@@ -7,7 +7,7 @@
         <p>{{blog.pub_date}}</p>
         <p>{{blog.summary}}<a href = "{% url 'detail' blog.id %}">...more</a></p>
     </div>
-    <a href="{% url 'delete_r' blog.id %}">삭제</a>
-    <a href="{% url 'update_r' blog.id %}">수정</a>
+    <a class="btn btn-primary" href="{% url 'update_r' blog.id %}" role="button">수정</a>
+    <a class="btn btn-primary" href="{% url 'delete_r' blog.id %}" role="button">삭제</a>
 {% endfor %}
 {% endblock %}
