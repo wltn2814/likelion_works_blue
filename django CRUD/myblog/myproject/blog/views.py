@@ -3,12 +3,13 @@ from .models import Blog
 from django.utils import timezone
 from django.core.paginator import Paginator
 from .forms import BlogUpdate
+from faker import Faker
 # Create your views here.
 
 def blog(request):
     blogs = Blog.objects
     blog_list = Blog.objects.all()
-    paginator = Paginator(blog_list, 1)
+    paginator = Paginator(blog_list, 10)
     page = request.GET.get('page')
     articles = paginator.get_page(page)
     return render(request, 'blog.html', {'blogs':blogs, 'articles':articles})
@@ -71,3 +72,13 @@ def update_r(request, blog_id):
 def revise(request):
     blogs = Blog.objects
     return render(request, 'revise.html', {'blogs':blogs})
+
+def fake(request):
+    for i in range(10):
+        myfake = Faker()
+        blog = Blog()
+        blog.title = myfake.name()
+        blog.body = myfake.address()
+        blog.pub_date = timezone.datetime.now()
+        blog.save()
+    return redirect('/')
