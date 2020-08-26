@@ -1,0 +1,18 @@
+var majorityElement = function(nums) {
+    let arr = [];
+    let num = 1;
+    nums.sort(function(a, b) { // 오름차순
+        return a - b;
+    });
+    for (let i = 0; i <nums.length; i++){
+        if (nums[i] === nums[i+1]){
+            num++;
+        }
+        else {
+            num = 1;
+        }
+        if (num >= (nums.length / 2)){
+            return nums[i];
+        }
+    }
+};

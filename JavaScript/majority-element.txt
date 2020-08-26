@@ -1,0 +1,14 @@
+var majorityElement = function(nums) {
+    for (let i = 0; i <= (nums.length / 2); i++) {
+        let big = 1;
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] === nums[j]) {
+                big++;
+            }
+            if (big >= nums.length / 2) {
+                return nums[i]
+            }
+        }
+    }
+    return nums[0];
+};

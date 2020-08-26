@@ -1,0 +1,17 @@
+var twoSum = function(nums, target) {
+    let sum = target + 1;
+    let j = 0;
+    for(let i = 0; i < nums.length; i++) {
+        j = i + 1;
+        while (sum != target) {
+            sum = nums[i] + nums[j];
+            j++;
+            if (j >= nums.length){
+                break;
+            }
+        }
+        if (sum == target){
+            return [i, j-1];
+        }
+    }
+};
