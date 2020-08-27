@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container_new">
+  <form action="{% url 'create' %}">
+    <br />
+    <div class="title_new">
+      글쓰기📣
+    </div>
+    <br />
+    <h4>제목</h4>
+    <input type="text" name="title" />
+    <br />
+    <br />
+    <h4>동아리 이름</h4>
+    <input type="text" name="clubname" />
+    <br />
+    <br />
+    <h4>본문</h4>
+    <textarea cols="40" rows="10" name="body"></textarea>
+    <br />
+    <br />
+    <h4>문의사항</h4>
+    <h5>카카오톡 아이디 ✉</h5>
+    <input type="text" name="kakaoid" />
+    <br />
+    <br />
+    <h5>전화번호 📞</h5>
+    <input type="text" name="phonenumber" />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="submit_new">
+      <input class="btn btn-dark" type="submit" value="제출하기" />
+      <br />
+      <br />
+      <br />
+    </div>
+  </form>
+</div>
+{% endblock %}

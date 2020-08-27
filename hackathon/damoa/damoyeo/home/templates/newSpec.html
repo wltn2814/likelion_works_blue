@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container_new">
+  <form action="{% url 'createSpec' %}">
+    <br />
+    <div class="title_new">
+      글쓰기📣
+    </div>
+    <br />
+    <h4>제목:</h4>
+    <input type="text" name="title" />
+    <br />
+    <br />
+    <h4>모집종류:</h4>
+    <input type="text" name="clubname" />
+    <br />
+    <br />
+    <h4>본문:</h4>
+    <textarea cols="40" rows="10" name="body"></textarea>
+    <br />
+    <br />
+    <h4>문의</h4>
+    <li style="font-size: 1.5em">카카오톡 아이디 ✉</li>
+    <input type="text" name="kakaoid" />
+    <br />
+    <br />
+    <li style="font-size: 1.5em;">전화번호 📞</li>
+    <input type="text" name="phonenumber" />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="submit_new">
+      <input class="btn btn-dark" type="submit" value="제출하기" />
+      <br />
+      <br />
+      <br />
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for home in homes.all %}
+    {% if home.author == user %}
+        <div class = "container">
+            <h1>{{home.title}}</h1>
+            <p>{{home.author}}</p>
+            <p>{{home.pub_date}}</p>
+            <p>{{home.summary}}<a href = "{% url 'detail' home.id %}">...more</a></p>
+        </div>
+        <a class="btn btn-primary" href="{% url 'update_r' home.id %}" role="button">수정</a>
+        <a class="btn btn-primary" href="{% url 'delete_r' home.id %}" role="button">삭제</a>
+    {% endif %}
+{% endfor %}
+{% endblock %}

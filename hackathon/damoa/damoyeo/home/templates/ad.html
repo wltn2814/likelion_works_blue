@@ -1,0 +1,52 @@
+ad. html 
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+<h1>여러분이 동아리의 주인공입니다!!</h1>
+
+{% if user.is_authenticated %}
+
+<span class= "ad_write">
+    <a href="{% url 'newAd' %}">글쓰기</a>
+</span>
+{% endif %}
+    {% for home in articles %}
+        {% if home.use == "홍보" %}
+        
+        <br>
+            <div class="ad_container">
+                <div class="ad_clubname">
+                    <h3>{{home.title}}</h3>
+                </div>
+                    <div class="ad_remain"><h3>동아리 : {{home.clubname}}</h3></div>
+                    <div class="ad_remain"><h3>{{home.author}}</h3></div>
+                    <div class="ad_remain"><h3>{{home.pub_date}}</h3></div>
+                <div class="ad_summary">{{home.summary}}<a href = "{% url 'adDetail' home.id %}">...more</a></div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+
+    </script>
+    <br>
+    <br>
+
+    {% if articles.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ articles.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    <span>{{articles.number}}</span>
+    <span>of</span>
+    <span>{{articles.paginator.num_pages}}</span>
+
+    {% if articles.has_next %}
+        <a href="?page={{ articles.next_page_number }}">Next</a>
+        <a href="?page={{ articles.paginator.num_pages }}">Last</a>
+    {% endif %}
+
+    <br>
+    <br>
+
+{% endblock %}

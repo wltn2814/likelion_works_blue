@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>모집| 자격증</h1>
+<h3>어학 자격증, 외국어 회화, 면접 준비 함께 해요~~</h3>
+{% if user.is_authenticated %}
+<span class= ad_write>
+    <a href="{% url 'newSpec_l' %}">글쓰기</a>
+</span>
+{% endif %}    
+    {% for home in articles %}
+        {% if home.clubname == "자격증" %}
+        <div class= "ad_line">
+            <h1>--------------------------------------------------------------</h1>
+        </div>
+        <div class = "spec_container">
+            <h1>{{home.title}}</h1>
+            <p>작성자: {{home.author}}</p>
+            <p>{{home.pub_date}}</p>
+            <p>{{home.summary}}<a href = "{% url 'specDetail_l' home.id %}">...more</a></p>
+        </div>
+        {% endif %}
+    {% endfor %}
+    <div class= "ad_line">
+        <h1>--------------------------------------------------------------</h1>
+    </div>
+    <br>
+  <br>
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{home.title}}</h1>
+<p>{{home.author}}</p>
+<p>{{home.clubname}}</p>
+<p>{{home.pub_date}}</p>
+<p>{{home.body}}</p>
+<a href="{% url 'home' %}">돌아가기</a>
+{% if home.author == user %}
+    <a href="{% url 'delete' home.id %}">삭제</a>
+    <a href="{% url 'update' home.id %}">수정</a>
+{% endif %}
+
+{% endblock %}

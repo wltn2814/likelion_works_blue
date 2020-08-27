@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<span class= "ad_write">
+    <a href="{% url 'new_g' %}">글쓰기</a>
+</span>
+{% endif %}
+    {% for home in articles %}
+    {% if home.clubname == "동아리" %}
+        {% if home.clubname == "총학생회" %}
+        <div class="ad_container">
+            <div class="ad_clubname">
+                <h3>{{home.title}}</h3>
+            </div>
+                <div class="ad_remain"><h3>동아리 : {{home.clubname}}</h3></div>
+                <div class="ad_remain"><h3>{{home.author}}</h3></div>
+                <div class="ad_remain"><h3>{{home.pub_date}}</h3></div>
+            <div class="ad_summary">{{home.summary}}<a href = "{% url 'reportDetail_g' home.id %}">...more</a></div>
+        </div>  
+        {% endif %}
+        {% endif %}
+    {% endfor %}
+    </script>
+{% endblock %}

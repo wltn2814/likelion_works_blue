@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    background-color: #f2f2f2;
+}
+.container {
+    height: 90%;
+    width: 100%;
+    margin: 0;
+}
+.logobox {
+    width: 100%;
+    border-top : 0.1px solid #333333;
+    padding: 0 10% 0 0;
+    list-style-type : none;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+.logobox2 {
+    width: 100%;
+    padding: 0 10% 0 0;
+    list-style-type : none;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+.logo {
+    position : absolute;
+    top: 0;
+    width: auto;
+    height: 10em;
+    display: inline-block;
+}
+.logoname {
+    font-size : 7em;
+    display: inline-block;
+}
+
+.small_title {
+    font-size : 2em;
+    font-weight : bold;
+    list-style-type : none;
+}
+
+.body {
+    padding-left : 10%; 
+    font-size : 1.5em;
+    font-weight: normal;
+    list-style-type : none;
+}
+
+.introduce {
+    padding-left : 15%;
+    border-bottom : 0.1px solid #333333;
+}
+
+.container_login {
+    height: 90%;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.inputbox {
+    height: 60%;
+    width: 10%;
+}
+
+.lineup {
+    padding-left : 20%;
+}
+
+.error{
+    font-size: 1em; 
+    list-style-type: none;
+    color: #B51A1A;
+}
+
+.container_signup {
+    height: 90%;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #C1C1F1;
+}
+
+.list_left{
+    position: fixed;
+    left: 70px;
+    top: 120px;
+}
+
+.boxsize{
+    width: 8em;
+    height: 5em;
+    background-color: #C1C1F1;
+} 
+
+.ad_container {
+    border: 1px solid rgb(155, 155, 255);
+    margin: 30px;
+    padding: 20px;
+    font-size: 20px;
+ }
+ .ad_write {
+    display: inline;
+    float: right;
+    text-align: right;
+    border: 1px solid;
+    padding: 10px 0px;
+
+
+ }
+ .ad_clubname {
+   font-size: 15px;
+ }
+ .ad_remain {
+    margin: 10px;
+    display: inline-block;
+    font-size: 10px;
+ }
+ .ad_line {
+    color: gray;
+ }
+
+ .ad_summary {
+    font-size: 23px;
+ }
+
+ .title_new {
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .submit_new {
+    text-align: center;
+  }
+  .container_new {
+    padding-left: 150px;
+  }
+  .title_rpDetail {
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .online_rpDetail {
+    display: inline-flex;
+    text-align: right;
+    padding: 20px 0px 50px 0px;
+  }
+  .body_rpDetail {
+    padding: 20px 0px 500px 0px;
+    border: 1px solid #9696ff79;
+  }
+  .contact_Detail {
+    font-size: 20px;
+  }

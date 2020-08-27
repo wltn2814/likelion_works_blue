@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<br />
+<div class="container_new">
+  <div class="title_rpDetail">
+    <p>{{home.title}}</p>
+  </div>
+  <h5>동아리 : {{home.clubname}}</h5>
+  <div class="online_rpDetail">
+    <div class="online_rpDetailL">작성자 &nbsp; {{home.author}}</div>
+    <div class="online_rpDetailR">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;작성시간
+      &nbsp; {{home.pub_date}}
+    </div>
+  </div>
+  <div class="body_rpDetail">
+    <p>{{home.body}}</p>
+  </div>
+  <br />
+  <br />
+  <div class="contact_Detail">
+    <p>문의</p>
+    <p>카카오톡 아이디 ✉ &nbsp;&nbsp; {{home.kakaoid}}</p>
+    <p>휴대폰 번호 📞 &nbsp;&nbsp; {{home.phonenumber}}</p>
+  </div>
+  <br />
+  <br />
+  <br />
+  <div class="menubutton_Detail">
+    <a class="smallbutton" href="{% url 'report_g' %}">돌아가기</a>
+    {% if home.author == user %}
+    <a class="smallbutton" href="{% url 'delete' home.id %}">삭제</a>
+    <a class="smallbutton" href="{% url 'update_c' home.id %}">수정</a>
+  </div>
+</div>
+{% endif %} {% endblock %}
