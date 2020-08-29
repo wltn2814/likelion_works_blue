@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        button {
+            width : 200px;
+            height: 50px;
+            margin-top: 50px;
+            margin-left : 50px;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+        .black {
+            background-color: black;
+        }
+        .white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 첫번째 버튼을 클릭하면 prompt창을 띄우고 여기서 입력받은 값으로 버튼 텍스트를 바꿔주세요 -->
+    <button id="first">first</button>
+    <br>
+    <!-- 두번째 버튼을 클릭하면 다섯번째 버튼(fifth)이 보였다 안보였다 하게 해주세요 -->
+    <button id="second">second</button>
+    <br>
+    <!-- 세번째 버튼을 클릭하면 https://google.com으로 이동하도록 해주세요 -->
+    <button id="third">third</button>
+    <br>
+    <!-- 네번째 버튼을 클릭하면 이 웹페이지의 배경색이 까만색으로 바뀌도록 해주세요 -->
+    <!-- 맨 밑의 h3태그는 흰색으로 바꿔주세요 -->
+    <button id="fourth">fourth</button>
+    <br>
+    <!-- 다섯번째 버튼을 클릭하면 ajax 통신을 통해 아래 h3 태그의 텍스트가 바뀌도록 해주세요-->
+    <!-- url : http://52.79.198.34/work.php-->
+    <!-- request method :  GET -->
+    <!-- response example : (TEXT) "time":"20시 49분 33초 " -->
+    <button id="fifth">fifth</button>
+
+    <br>
+
+    <div>
+        <h3 id="ajax-commu" style="margin-left: 50px; margin-top: 50px">ajax has never been operated.</h3>
+    </div>
+    <script type="text/javascript">
+        // codes here
+        /*let body = document.querySelector('body');*/
+        let body = document.getElementsByTagName('body');
+        let ajax = document.getElementById('ajax-commu');
+        let first = document.getElementById('first');
+        let second = document.getElementById('second');
+        let third = document.getElementById('third')
+        let fourth = document.getElementById('fourth');
+        let fifth = document.getElementById('fifth');
+        first.addEventListener('click', function() {
+            first.innerHTML=prompt("값을 입력해주세요");
+        })
+        second.addEventListener('click', function() {
+            fifth.classList.toggle('hidden');
+        })
+        third.addEventListener('click', function() {
+            location.href = 'https://google.com';
+        })
+        fourth.addEventListener('click', function() {
+            ajax.classList.toggle('white');
+            body[0].classList.toggle('black');
+        })
+        fifth.addEventListener('click', function() {
+            $.ajax({
+                url: 'http://52.79.198.34/work.php',
+                type: 'GET',
+                success : function(data){
+                    ajax.innerHTML = data;
+                }
+            })
+        })
+    </script>
+</body>
+</html>
